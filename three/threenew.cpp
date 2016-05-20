@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ void S();
 void Start()
 {
   S();
-  if (c == '/')
+  if (c == '\n')
     {
       cout <<  "OK" <<  endl;
     }
@@ -24,49 +25,34 @@ void S()
 {
 	if (c == 'g')
 	{
-		cout << "call S in g" << endl;
-		cin >> c;
+		c = getchar();
 		A();
 		S();
-		cout << "after S c = " << c << endl;
 		if (c == 'f')
 		{
-			cin >> c;
-			//	if (c == '/')
-			//{
-			//	cout << "OK" << endl;
-			//}
-			//else
-			//{
-			//	cout << "in S" << endl;
-			//	throw(c);	
-			//}
+			c = getchar();
 		}
 		else 
 		{
-			cout << "out S" << endl;
 			throw(c);
 		}
 	}
-	//else
-	//	cin >> c;
 }
 
 void A()
 {
 	if (c == 'f')
 	{
-		cin >> c;
+		c = getchar();
 		B();
 	}
 	else if (c == 'g')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 	else
 	{
-		cout << "in A" << endl;
 		throw (c);
 	}
 }
@@ -75,12 +61,12 @@ void D()
 {
 	if (c == 'a')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 	else if (c == 'b')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 }
@@ -89,12 +75,12 @@ void B()
 {
 	if (c == 'b')
 	{
-		cin >> c;
+		c = getchar();
 		K();
 	}
 	else if (c == 'a')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 }
@@ -103,24 +89,24 @@ void K()
 {
 	if (c == 'c')
 	{
-		cin >> c;
+		c = getchar();
 		B();
 	}
 	else if (c == 'a')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 	else if (c == 'b')
 	{
-		cin >> c;
+		c = getchar();
 		D();
 	}
 }
 
 int main()
 {
-	cin >> c;
+	c = getchar();
 
 	try
 	{
