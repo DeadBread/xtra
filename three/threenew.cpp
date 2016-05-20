@@ -8,10 +8,20 @@ void A();
 void D();
 void B();
 void K();
+void S();
+void Start()
+{
+  S();
+  if (c == '/')
+    {
+      cout <<  "OK" <<  endl;
+    }
+  else
+    throw(c);
+}
 
 void S()
 {
-
 	if (c == 'g')
 	{
 		cout << "call S in g" << endl;
@@ -22,15 +32,15 @@ void S()
 		if (c == 'f')
 		{
 			cin >> c;
-			if (c == '/')
-			{
-				cout << "OK" << endl;
-			}
-			else
-			{
-				cout << "in S" << endl;
-				throw(c);	
-			}
+			//	if (c == '/')
+			//{
+			//	cout << "OK" << endl;
+			//}
+			//else
+			//{
+			//	cout << "in S" << endl;
+			//	throw(c);	
+			//}
 		}
 		else 
 		{
@@ -114,7 +124,7 @@ int main()
 
 	try
 	{
-		S();
+		Start();
 	}
 	catch(char t)
 	{
